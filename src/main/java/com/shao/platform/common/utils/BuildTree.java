@@ -52,4 +52,35 @@ public class BuildTree {
         }
         return  root;
     }
+
+
+    public static <T> List<Tree<T>> buildList(List<Tree<T>> nodes, String idParam) {
+        if (nodes == null) {
+            return null;
+        }
+        List<Tree<T>> topNodes = new ArrayList<Tree<T>>();
+
+        for (Tree<T> children : nodes) {
+
+            String pid = children.getParentId();
+            if (pid == null || idParam.equals(pid)) {
+                topNodes.add(children);
+
+                continue;
+            }
+
+            for (Tree<T> parent : nodes) {
+                String id = parent.getId();
+                if (id != null && id.equals(pid)) {
+                    parent.getChildren().add(children);
+                    children.setHasParent(true);
+                    parent.setHasChild(true);
+
+                    continue;
+                }
+            }
+
+        }
+        return topNodes;
+    }
 }

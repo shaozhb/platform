@@ -41,6 +41,20 @@ public class MenuServiceImpl implements MenuService{
 
     @Override
     public List<Tree<MenuDo>> listMenuTree(Long id) {
-        return null;
+        List<Tree<MenuDo>> trees=new ArrayList<Tree<MenuDo>>();
+        List<MenuDo> menuDos=menuMapper.listMenuByUserId(id);
+        for(MenuDo menudo:menuDos){
+            Tree<MenuDo> tree=new Tree<MenuDo>();
+            tree.setId(menudo.getMenuId().toString());
+            tree.setParentId(menudo.getParentId().toString());
+            tree.setText(menudo.getName());
+            Map<String,Object> attributes=new HashMap<>(16);
+            attributes.put("url",menudo.getUrl().toString());
+            attributes.put("icon",menudo.getIcon().toString());
+            tree.setAttributes(attributes);
+            trees.add(tree);
+        }
+        List<Tree<MenuDo>> list=BuildTree.buildList(trees,"0");
+//        Tree<MenuDo> t= BuildTree.build(trees,0);
     }
 }
