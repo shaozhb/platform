@@ -56,5 +56,6 @@ public class MenuServiceImpl implements MenuService{
         }
         List<Tree<MenuDo>> list=BuildTree.buildList(trees,"0");
 //        Tree<MenuDo> t= BuildTree.build(trees,0);
+        return list;
     }
 }
