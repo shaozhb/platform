@@ -7,6 +7,7 @@ import com.shao.platform.domain.Tree;
 import com.shao.platform.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,7 +17,9 @@ import java.util.Map;
 /**
  * Created by zhibin.shao on 2017/12/20.
  */
+@SuppressWarnings("AlibabaRemoveCommentedCode")
 @Service
+@Transactional(readOnly = true,rollbackFor = Exception.class)
 public class MenuServiceImpl implements MenuService{
     @Autowired
     MenuDao menuMapper;
@@ -30,8 +33,8 @@ public class MenuServiceImpl implements MenuService{
                 tree.setParentId(menudo.getParentId().toString());
                 tree.setText(menudo.getName());
                 Map<String,Object> attributes=new HashMap<>(16);
-                attributes.put("url",menudo.getUrl().toString());
-                attributes.put("icon",menudo.getIcon().toString());
+                attributes.put("url",menudo.getUrl());
+                attributes.put("icon",menudo.getIcon());
                 tree.setAttributes(attributes);
                 trees.add(tree);
             }
@@ -42,15 +45,15 @@ public class MenuServiceImpl implements MenuService{
     @Override
     public List<Tree<MenuDo>> listMenuTree(Long id) {
         List<Tree<MenuDo>> trees=new ArrayList<Tree<MenuDo>>();
-        List<MenuDo> menuDos=menuMapper.listMenuByUserId(id);
+        List<MenuDo> menuDos=menuMapper.listMenuByUserId(1L);
         for(MenuDo menudo:menuDos){
             Tree<MenuDo> tree=new Tree<MenuDo>();
             tree.setId(menudo.getMenuId().toString());
             tree.setParentId(menudo.getParentId().toString());
             tree.setText(menudo.getName());
             Map<String,Object> attributes=new HashMap<>(16);
-            attributes.put("url",menudo.getUrl().toString());
-            attributes.put("icon",menudo.getIcon().toString());
+            attributes.put("url",menudo.getUrl());
+            attributes.put("icon",menudo.getIcon());
             tree.setAttributes(attributes);
             trees.add(tree);
         }
@@ -59,3 +62,5 @@ public class MenuServiceImpl implements MenuService{
         return list;
     }
 }
+
+

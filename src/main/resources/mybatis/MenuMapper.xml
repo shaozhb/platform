@@ -3,6 +3,7 @@
 
 <mapper namespace="com.shao.platform.dao.MenuDao">
 
+
 	<select id="get" resultType="com.bootdo.system.domain.MenuDO">
 		select
 		`menu_id`,`parent_id`,`name`,`url`,`perms`,`type`,`icon`,`order_num`,`gmt_create`,`gmt_modified`

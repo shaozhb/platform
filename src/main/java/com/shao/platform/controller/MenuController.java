@@ -20,7 +20,7 @@ import java.util.List;
 
 public class MenuController {
 
-    String prefix="/system/menu";
+
 
     @Autowired
     MenuService menuService;
