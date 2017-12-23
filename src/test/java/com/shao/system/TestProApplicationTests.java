@@ -1,4 +1,4 @@
-package com.shao.platform;
+package com.shao.system;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

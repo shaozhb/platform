@@ -1,4 +1,4 @@
-package com.shao.platform.domain;
+package com.shao.system.domain;
 
 import java.util.ArrayList;
 import java.util.List;

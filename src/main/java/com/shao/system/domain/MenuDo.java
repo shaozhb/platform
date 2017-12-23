@@ -1,4 +1,4 @@
-package com.shao.platform.domain;
+package com.shao.system.domain;
 
 import java.io.Serializable;
 import java.util.Date;

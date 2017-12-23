@@ -1,10 +1,9 @@
-package com.shao.platform.dao;
+package com.shao.system.dao;
 
-import com.shao.platform.domain.MenuDo;
+import com.shao.system.domain.MenuDo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

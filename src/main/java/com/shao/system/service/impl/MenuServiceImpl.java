@@ -1,10 +1,10 @@
-package com.shao.platform.service.impl;
+package com.shao.system.service.impl;
 
-import com.shao.platform.common.utils.BuildTree;
-import com.shao.platform.dao.MenuDao;
-import com.shao.platform.domain.MenuDo;
-import com.shao.platform.domain.Tree;
-import com.shao.platform.service.MenuService;
+import com.shao.common.utils.BuildTree;
+import com.shao.system.dao.MenuDao;
+import com.shao.system.domain.MenuDo;
+import com.shao.system.domain.Tree;
+import com.shao.system.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

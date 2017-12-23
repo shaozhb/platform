@@ -1,7 +1,7 @@
-package com.shao.platform.service;
+package com.shao.system.service;
 
-import com.shao.platform.domain.Tree;
-import com.shao.platform.domain.MenuDo;
+import com.shao.system.domain.Tree;
+import com.shao.system.domain.MenuDo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

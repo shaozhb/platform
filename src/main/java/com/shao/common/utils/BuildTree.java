@@ -1,6 +1,6 @@
-package com.shao.platform.common.utils;
+package com.shao.common.utils;
 
-import com.shao.platform.domain.Tree;
+import com.shao.system.domain.Tree;
 
 import java.util.ArrayList;
 import java.util.HashMap;

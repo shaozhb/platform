@@ -12143,7 +12143,7 @@
 			"bCollapse": null,
 
 			/**
-			 * Width of the scrollbar for the web-browser's platform. Calculated
+			 * Width of the scrollbar for the web-browser's system. Calculated
 			 * during table initialisation.
 			 *  @type int
 			 *  @default 0
