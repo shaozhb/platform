@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -38,4 +39,15 @@ public class MenuController {
     public String getMain(){
         return "main";
     }
+    @GetMapping("/mm")
+    public String getin(){
+        return "/autotest/atindex";
+    }
+    @RequestMapping("/nn")
+    @ResponseBody
+    public String getnn() {
+return "";
+
+    }
+
 }

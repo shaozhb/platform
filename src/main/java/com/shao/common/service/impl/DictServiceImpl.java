@@ -4,6 +4,7 @@ import com.shao.common.dao.DictDAO;
 import com.shao.common.domain.DictDO;
 import com.shao.common.service.DictService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Map;
@@ -11,6 +12,7 @@ import java.util.Map;
 /**
  * Created by zhibin.shao on 2017/12/23.
  */
+@Service
 public class DictServiceImpl implements DictService {
 
     @Autowired
